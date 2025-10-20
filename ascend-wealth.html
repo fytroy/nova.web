@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Ascend Wealth Manager | Nova Digital</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Case Study Specific Styles */
+        .case-study-hero {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('assets/img/project-3-thumb.jpg') no-repeat center center/cover;
+            padding: 10rem 5% 5rem;
+            color: white;
+            text-align: center;
+        }
+        .key-metrics {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            padding: 3rem 0;
+            background-color: var(--bg-secondary);
+        }
+        .metric-item h4 {
+            font-size: 2.5rem;
+            color: var(--accent-neon-green);
+            margin: 0;
+        }
+        .metric-item p {
+            margin: 0;
+            color: var(--text-subtle);
+        }
+        .content-section {
+            padding: 4rem 5%;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .content-section h2 {
+            color: var(--accent-electric-blue);
+        }
+        .tech-stack-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .tech-stack-list li {
+            background-color: var(--accent-neon-green);
+            color: var(--bg-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+<header class="main-header">
+    <a href="index.html" class="logo">
+        <img src="assets/img/logo.svg" alt="Nova Digital Logo" width="30" height="30" class="logo-icon">
+        NOVA DIGITAL
+    </a>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="index.html#contact" class="cta-button nav-cta">Start a Project</a></li>
+        </ul>
+    </nav>
+    <button class="menu-toggle" aria-controls="nav-menu" aria-expanded="false">&#9776;</button>
+</header>
+
+<main>
+    <section class="case-study-hero" data-aos="fade-in">
+        <p class="project-tags">FINTECH | MOBILE APP DEVELOPMENT</p>
+        <h1 style="font-size: 3.5rem; margin-top: 0.5rem;">Ascend Wealth Manager</h1>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 1rem auto;">
+            Developed a secure, regulatory-compliant mobile wealth management application with end-to-end encryption standards.
+        </p>
+    </section>
+
+    <section class="key-metrics">
+        <div class="metric-item" data-aos="fade-up">
+            <h4>A+</h4>
+            <p>Security Audit Rating (Third-Party)</p>
+        </div>
+        <div class="metric-item" data-aos="fade-up" data-aos-delay="100">
+            <h4>4.8/5</h4>
+            <p>App Store Rating (Launch Quarter)</p>
+        </div>
+        <div class="metric-item" data-aos="fade-up" data-aos-delay="200">
+            <h4>20,000+</h4>
+            <p>Initial User Sign-ups</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 data-aos="fade-right">The **Challenge**</h2>
+        <p data-aos="fade-up">Entering the competitive Fintech space required Ascend to launch a mobile application that was not just feature-rich, but demonstrably secure and compliant with stringent financial regulations. Speed and reliability were non-negotiable.</p>
+
+        <h2 data-aos="fade-right" style="margin-top: 3rem;">Our **Solution**</h2>
+
+        <ul class="tech-stack-list" data-aos="fade-up" data-aos-delay="100">
+            <li>React Native (Cross-Platform)</li>
+            <li>Biometric Authentication</li>
+            <li>End-to-End Encryption (E2EE)</li>
+            <li>Node.js (API)</li>
+        </ul>
+
+        <p data-aos="fade-up">We chose **React Native** to efficiently deploy a consistent, native-like experience across both iOS and Android platforms. The core focus was on security: implementing multi-factor authentication, biometric logins, and **E2EE** for all sensitive financial data. We also integrated a bespoke **blockchain ledger** to transparently track specific asset movements, meeting a key regulatory requirement.</p>
+
+        <p data-aos="fade-up" style="text-align: center; margin-top: 3rem;">
+            <img src="assets/img/project-3-detail.png" alt="Detailed screenshot of Ascend mobile app UI" style="max-width: 100%; border-radius: 8px; margin-top: 2rem;">
+        </p>
+
+        <h2 data-aos="fade-right" style="margin-top: 3rem;">Conclusion & **Impact**</h2>
+        <p data-aos="fade-up">The Ascend Wealth Manager was successfully launched with zero critical findings in its pre-launch security audit. Its robust security framework became a major selling point, quickly establishing trust and leading to excellent user adoption rates in the first quarter.</p>
+
+        <div style="text-align: center; margin-top: 5rem;">
+            <a href="portfolio.html" class="cta-button primary">Back to Portfolio</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="logo" style="margin-bottom: 1rem;">
+                <img src="assets/img/logo.svg" alt="Nova Digital Logo" width="24" height="24" class="logo-icon">
+                NOVA DIGITAL
+            </div>
+            <p style="color: var(--text-subtle);">
+                Crafting scalable, performance-driven digital solutions using the most advanced 2025 tech stack.
+            </p>
+            <div class="social-links">
+                <a href="#" aria-label="Nova Digital on LinkedIn">🔗</a>
+                <a href="#" aria-label="Nova Digital on X (Twitter)">🐦</a>
+                <a href="#" aria-label="Nova Digital on GitHub">💻</a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="portfolio.html">Case Studies</a></li>
+                <li><a href="process.html">Our Process</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Have a Project?</h4>
+            <p style="margin-bottom: 1rem;">
+                Let's discuss how we can accelerate your digital vision.
+            </p>
+            <a href="index.html#contact" class="cta-button">
+                Start a Brief
+            </a>
+        </div>
+    </div>
+    <div class="copyright-bar">
+        &copy; 2025 Nova Digital. All rights reserved. | Crafted with **clean code** and performance in mind.
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
