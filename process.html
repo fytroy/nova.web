@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process | Nova Digital - Our Transparent Development Approach</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .step-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-neon-green);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            border-left-color: var(--accent-electric-blue);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.1);
+        }
+        .step-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-electric-blue);
+            font-family: var(--font-header);
+            line-height: 1;
+            opacity: 0.8;
+            flex-shrink: 0;
+        }
+        .step-content h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--accent-neon-green);
+        }
+        .step-card:nth-child(even) {
+            flex-direction: row-reverse;
+            border-left: none;
+            border-right: 5px solid var(--accent-neon-green);
+        }
+        @media (max-width: 768px) {
+            .step-card, .step-card:nth-child(even) {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+                border-right: none;
+                border-left: 5px solid var(--accent-neon-green);
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="main-header">
+    <div class="logo">
+        <img src="assets/img/logo.svg" alt="Nova Digital Logo" width="30" height="30" class="logo-icon">
+        NOVA DIGITAL
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html" class="active">Process</a></li>
+            <li><a href="index.html#contact" class="cta-button nav-cta">Start a Project</a></li>
+        </ul>
+    </nav>
+    <button class="menu-toggle" aria-controls="nav-menu" aria-expanded="false">&#9776;</button>
+</header>
+
+<main>
+    <section class="hero-section" style="min-height: 50vh; padding-top: 10rem; padding-bottom: 5rem;">
+        <h1 data-aos="fade-down" style="max-width: 100%;">Our **Agile & Transparent** Process</h1>
+        <p data-aos="fade-up" data-aos-delay="100" style="max-width: 900px; font-size: 1.1rem;">
+            We follow a five-stage, iterative methodology designed to deliver high-quality digital products on time, while maintaining clear communication and flexibility at every step.
+        </p>
+    </section>
+
+    <section id="process-steps" style="padding-top: 0;">
+        <div class="process-flow">
+
+            <div class="step-card" data-aos="fade-right">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Discovery & Strategy</h3>
+                    <p>We begin with a deep dive into your business goals, target audience, and competitive landscape. The output is a clear, validated **Digital Strategy** and detailed technical requirements.</p>
+                </div>
+            </div>
+
+            <div class="step-card" data-aos="fade-left">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Design & Prototyping</h3>
+                    <p>Our UX/UI team creates wireframes and interactive prototypes. This stage ensures the visual design and user flow are refined and approved *before* any code is written, saving time and cost.</p>
+                </div>
+            </div>
+
+            <div class="step-card" data-aos="fade-right">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>Agile Development Sprints</h3>
+                    <p>The solution is built in two-week sprints. You receive regular updates and access to staging environments for continuous feedback, guaranteeing alignment with your vision.</p>
+                </div>
+            </div>
+
+            <div class="step-card" data-aos="fade-left">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h3>Quality Assurance & Launch</h3>
+                    <p>Rigorous testing across devices, browsers, and performance metrics (Core Web Vitals). Upon final sign-off, we execute a seamless, zero-downtime deployment to your chosen cloud environment.</p>
+                </div>
+            </div>
+
+            <div class="step-card" data-aos="fade-right">
+                <div class="step-number">05</div>
+                <div class="step-content">
+                    <h3>Post-Launch & Optimization</h3>
+                    <p>Our partnership doesn't end at launch. We provide ongoing support, monitor performance analytics, and offer optimization sprints to ensure the platform scales with your business needs.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="cta-contact-section">
+        <div class="cta-text">
+            <h2>Ready to **Elevate** Your Brand?</h2>
+            <p>
+                Stop relying on outdated templates. Let's discuss a custom digital solution that scales with your ambition.
+            </p>
+        </div>
+
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" name="email" placeholder="Your Work Email" required aria-label="Your Work Email">
+            <textarea name="project_details" placeholder="Tell us about your project..." rows="4" aria-label="Project Details"></textarea>
+            <button type="submit" class="cta-button primary">Send Project Brief</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="logo" style="margin-bottom: 1rem;">
+                <img src="assets/img/logo.svg" alt="Nova Digital Logo" width="24" height="24" class="logo-icon">
+                NOVA DIGITAL
+            </div>
+            <p style="color: var(--text-subtle);">
+                Crafting scalable, performance-driven digital solutions using the most advanced 2025 tech stack.
+            </p>
+            <div class="social-links">
+                <a href="#" aria-label="Nova Digital on LinkedIn">🔗</a>
+                <a href="#" aria-label="Nova Digital on X (Twitter)">🐦</a>
+                <a href="#" aria-label="Nova Digital on GitHub">💻</a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="portfolio.html">Case Studies</a></li>
+                <li><a href="process.html">Our Process</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Have a Project?</h4>
+            <p style="margin-bottom: 1rem;">
+                Let's discuss how we can accelerate your digital vision.
+            </p>
+            <a href="index.html#contact" class="cta-button">
+                Start a Brief
+            </a>
+        </div>
+    </div>
+
+    <div class="copyright-bar">
+        &copy; 2025 Nova Digital. All rights reserved. | Crafted with **clean code** and performance in mind.
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
