@@ -187,7 +187,7 @@ section {
     box-shadow: 0 5px 20px rgba(0, 255, 255, 0.6);
 }
 
-/* --- Content Sections (Reused styles) --- */
+/* --- Content Sections --- */
 .hero-section {
     min-height: 85vh;
     display: flex;
@@ -201,6 +201,30 @@ section {
 .hero-section h1 {
     max-width: 700px;
 }
+
+/* 🚀 HERO VISUAL FIX: Apply the requested sizing and positioning */
+.hero-visual {
+    position: relative;
+    transform: none;
+    margin-top: 4rem;
+    right: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the image within its container */
+    align-items: center;
+}
+
+.hero-visual img {
+    /* Sizing constraints to match the white image placeholder's footprint */
+    max-height: 450px;
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    object-fit: contain;
+}
+/* --------------------------------------------------------------- */
 
 .service-grid {
     display: grid;
@@ -262,6 +286,48 @@ section {
     border-color: var(--accent-neon-green);
     box-shadow: 0 0 5px rgba(0, 255, 128, 0.5);
 }
+
+/* --- Portfolio Grid Styles (For portfolio.html) --- */
+.full-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+.project-card {
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.15);
+}
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+}
+.project-details {
+    padding: 1.5rem;
+}
+.project-details h3 {
+    color: var(--accent-neon-green);
+    margin-bottom: 0.5rem;
+}
+.project-tags {
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+    margin-bottom: 1rem;
+}
+.read-more {
+    color: var(--accent-electric-blue);
+    text-decoration: none;
+    font-weight: 700;
+}
+
 
 /* --- Footer (ENHANCED STYLES) --- */
 footer {
@@ -340,7 +406,7 @@ footer {
         padding-bottom: 1rem;
     }
 
-    .nav-menu.active {
+    .nav-menu.is-open { /* Use is-open class for JS toggle */
         display: block;
     }
 
@@ -359,13 +425,6 @@ footer {
         text-align: center;
     }
 
-    .hero-visual {
-        position: relative;
-        transform: none;
-        margin-top: 4rem;
-        right: auto;
-    }
-
     .cta-contact-section {
         flex-direction: column;
         text-align: center;
@@ -382,5 +441,11 @@ footer {
     }
     .social-links {
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
     }
 }
