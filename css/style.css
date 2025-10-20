@@ -359,11 +359,13 @@ footer {
         text-align: center;
     }
 
-    .hero-visual {
-        position: relative;
-        transform: none;
-        margin-top: 4rem;
-        right: auto;
+    .hero-visual img {
+        max-width: 100%; /* Ensures it doesn't overflow its container horizontally */
+        max-height: 400px; /* Adjust this value as needed. 400px is a good starting point. */
+        height: auto;      /* Maintains aspect ratio */
+        display: block;    /* Removes any extra space below the image */
+        margin: 2rem auto 0; /* Centers the image and adds space above */
+        object-fit: contain; /* Ensures the entire image is visible within its bounds */
     }
 
     .cta-contact-section {
