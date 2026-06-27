@@ -1,0 +1,104 @@
+---
+interface Props {
+  active?: string;
+}
+const { active = "" } = Astro.props;
+
+const links = [
+  { href: "/services", label: "Services", key: "services" },
+  { href: "/portfolio", label: "Portfolio", key: "portfolio" },
+  { href: "/process", label: "Process", key: "process" },
+];
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-border/60 bg-bg/85 backdrop-blur-md"
+>
+  <div
+    class="container-page flex items-center justify-between py-4"
+  >
+    <a href="/" class="flex items-center gap-2 font-display text-xl font-bold text-accent">
+      <img src="/images/logo.svg" alt="nova. logo" width="32" height="32" />
+      nova.
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class={`text-sm font-medium uppercase tracking-wide transition-colors hover:text-accent ${
+            active === link.key ? "text-accent" : "text-text"
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href="/#contact" class="btn btn-primary">Start a Project</a>
+    </nav>
+
+    <button
+      id="menu-toggle"
+      class="flex items-center justify-center rounded-md border border-border p-2 text-accent md:hidden"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Toggle navigation menu"
+    >
+      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="hidden border-t border-border/60 bg-bg px-6 pb-6 md:hidden"
+    aria-label="Mobile"
+  >
+    <ul class="flex flex-col gap-4 pt-4">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class={`block text-sm font-medium uppercase tracking-wide ${
+              active === link.key ? "text-accent" : "text-text"
+            }`}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href="/#contact" class="btn btn-primary w-full justify-center">Start a Project</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  const closeMenu = () => {
+    toggle?.setAttribute("aria-expanded", "false");
+    menu?.classList.add("hidden");
+    iconOpen?.classList.remove("hidden");
+    iconClose?.classList.add("hidden");
+  };
+
+  toggle?.addEventListener("click", () => {
+    const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isExpanded));
+    menu?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden");
+    iconClose?.classList.toggle("hidden");
+  });
+
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+</script>

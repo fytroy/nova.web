@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+
+const perks = [
+  { icon: "rocket" as const, title: "Remote-First", description: "Work from anywhere — we hire across time zones and meet in the overlap." },
+  { icon: "sparkle" as const, title: "Senior Mentorship", description: "Pair directly with senior engineers and designers on real client work, not busywork." },
+  { icon: "gauge" as const, title: "Sane Pace", description: "Two-week sprints with realistic scoping — no unpaid crunch before launch." },
+];
+---
+
+<Layout
+  title="Careers"
+  description="Join the nova. team. We're always looking for brilliant minds in modern web development and cloud engineering."
+>
+  <section class="bg-mesh container-page flex flex-col items-center gap-6 py-24 text-center">
+    <p class="eyebrow reveal">Join Us</p>
+    <h1 class="reveal max-w-3xl text-4xl font-bold md:text-6xl">Join the nova. Team</h1>
+    <p class="reveal max-w-2xl text-text-muted">
+      We're always looking for brilliant minds in modern web development, design, and cloud engineering. See open
+      roles below!
+    </p>
+  </section>
+
+  <section class="container-page section pt-0">
+    <div class="grid gap-6 md:grid-cols-3">
+      {perks.map((p) => (
+        <div class="reveal flex gap-4 rounded-xl border border-border bg-surface p-6">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-dim text-accent">
+            <Icon name={p.icon} class="h-5 w-5" />
+          </div>
+          <div>
+            <h3 class="font-bold text-text">{p.title}</h3>
+            <p class="mt-1 text-sm text-text-muted">{p.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y border-border bg-surface/40 py-24 text-center">
+    <div class="container-page">
+      <SectionHeading eyebrow="Open Roles" title="Current Openings" subtitle="Check back soon! We are currently staffing up for upcoming projects." />
+      <a href="/#contact" class="btn btn-primary reveal mt-8">Send Us Your CV</a>
+    </div>
+  </section>
+</Layout>

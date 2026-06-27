@@ -1,0 +1,43 @@
+---
+---
+
+<form
+  name="contact"
+  method="POST"
+  action="/thank-you"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  class="flex w-full max-w-md flex-col gap-4"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="hidden">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </p>
+
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+    aria-label="Your Name"
+    class="rounded-lg border border-border bg-bg px-4 py-3 text-text placeholder:text-text-muted focus:border-accent focus:outline-none"
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Work Email"
+    required
+    aria-label="Your Work Email"
+    class="rounded-lg border border-border bg-bg px-4 py-3 text-text placeholder:text-text-muted focus:border-accent focus:outline-none"
+  />
+  <textarea
+    name="project_details"
+    placeholder="Tell us about your project..."
+    rows="4"
+    aria-label="Project Details"
+    class="rounded-lg border border-border bg-bg px-4 py-3 text-text placeholder:text-text-muted focus:border-accent focus:outline-none"
+  ></textarea>
+  <button type="submit" class="btn btn-primary justify-center">Send Project Brief</button>
+</form>

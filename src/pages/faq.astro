@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const faqs = [
+  {
+    q: "What is your typical project budget?",
+    a: "Our minimum project size starts at $20,000 to ensure we can dedicate the necessary resources for a quality, custom solution.",
+  },
+  {
+    q: "How long does a project take?",
+    a: "A standard marketing website or small application typically takes 6 to 12 weeks, depending on complexity.",
+  },
+  {
+    q: "Do you offer support after launch?",
+    a: "Yes. Every engagement includes a post-launch optimization window, and we offer ongoing retainers for ongoing support and feature work.",
+  },
+  {
+    q: "What industries do you work with?",
+    a: "We've shipped projects across fintech, e-commerce, and SaaS/data analytics, but our process adapts to any domain with clear technical requirements.",
+  },
+  {
+    q: "How do you handle scope changes mid-project?",
+    a: "Each sprint ends with a review where new requirements are scoped and estimated separately, so changes are priced transparently instead of silently extending the timeline.",
+  },
+];
+---
+
+<Layout
+  title="FAQ"
+  description="Quick answers about nova.'s process, pricing, and project types."
+>
+  <section class="bg-mesh container-page flex flex-col items-center gap-6 py-24 text-center">
+    <p class="eyebrow reveal">Got Questions?</p>
+    <h1 class="reveal max-w-3xl text-4xl font-bold md:text-6xl">Frequently Asked Questions</h1>
+    <p class="reveal max-w-2xl text-text-muted">Quick answers about our process, pricing, and project types.</p>
+  </section>
+
+  <section class="container-page section mx-auto max-w-3xl pt-0">
+    <div class="flex flex-col gap-4">
+      {faqs.map((item) => (
+        <details class="card reveal group p-6 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-text">
+            {item.q}
+            <span class="shrink-0 text-accent transition-transform duration-300 group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-text-muted">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+</Layout>

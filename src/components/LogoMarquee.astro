@@ -1,0 +1,15 @@
+---
+const stack = [
+  "Next.js", "React", "TypeScript", "Node.js", "Python", "PostgreSQL",
+  "Power BI", "Streamlit", "Tailwind CSS", "Prisma", "Azure", "M-Pesa Daraja",
+];
+const items = [...stack, ...stack];
+---
+
+<div class="overflow-hidden border-y border-border bg-surface/40 py-8">
+  <div class="marquee-track gap-16">
+    {items.map((name) => (
+      <span class="shrink-0 font-display text-2xl font-bold text-text-muted/50">{name}</span>
+    ))}
+  </div>
+</div>

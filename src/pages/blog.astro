@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+
+const topics = [
+  { icon: "cloud" as const, title: "Serverless Architecture", description: "Patterns and pitfalls of moving production workloads to the edge." },
+  { icon: "gauge" as const, title: "Core Web Vitals", description: "Practical techniques for shaving milliseconds off real-world load times." },
+  { icon: "sparkle" as const, title: "Modern UI/UX Trends", description: "What's actually working in interface design this year, not just what's trending." },
+];
+---
+
+<Layout
+  title="Blog"
+  description="nova.'s latest thoughts on serverless architecture, Core Web Vitals, and modern UI/UX trends."
+>
+  <section class="bg-mesh container-page flex flex-col items-center gap-6 py-24 text-center">
+    <p class="eyebrow reveal">Insights</p>
+    <h1 class="reveal max-w-3xl text-4xl font-bold md:text-6xl">Insights on Future Tech</h1>
+    <p class="reveal max-w-2xl text-text-muted">
+      Our latest thoughts on serverless architecture, Core Web Vitals, and modern UI/UX trends.
+    </p>
+  </section>
+
+  <section class="container-page section pt-0">
+    <div class="grid gap-6 md:grid-cols-3">
+      {topics.map((t) => (
+        <div class="card reveal p-8">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-dim text-accent">
+            <Icon name={t.icon} class="h-6 w-6" />
+          </div>
+          <h3 class="mt-5 font-bold text-text">{t.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-text-muted">{t.description}</p>
+          <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-text-muted/60">Coming Soon</p>
+        </div>
+      ))}
+    </div>
+    <p class="reveal mt-10 text-center text-text-muted">
+      Articles coming soon! We're busy building the future right now.
+    </p>
+  </section>
+</Layout>

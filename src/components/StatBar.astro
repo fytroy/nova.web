@@ -1,0 +1,19 @@
+---
+const stats = [
+  { value: "7+", label: "Production-Grade Projects" },
+  { value: "4", label: "Industries Covered" },
+  { value: "100%", label: "Open-Source Codebases" },
+  { value: "1", label: "Founder, Direct Access" },
+];
+---
+
+<section class="border-y border-border bg-surface/60">
+  <div class="container-page grid grid-cols-2 gap-8 py-12 md:grid-cols-4">
+    {stats.map((s) => (
+      <div class="reveal text-center">
+        <div class="stat-number text-4xl md:text-5xl">{s.value}</div>
+        <p class="mt-2 text-xs uppercase tracking-wide text-text-muted">{s.label}</p>
+      </div>
+    ))}
+  </div>
+</section>

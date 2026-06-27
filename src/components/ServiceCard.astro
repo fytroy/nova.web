@@ -1,0 +1,20 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  number: string;
+  icon: "code" | "layers" | "cloud" | "shield" | "rocket" | "chart" | "search" | "sparkle" | "chat" | "gauge";
+  title: string;
+  description: string;
+}
+const { number, icon, title, description } = Astro.props;
+---
+
+<div class="card reveal overflow-hidden p-8">
+  <span class="card-watermark">{number}</span>
+  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-dim text-accent">
+    <Icon name={icon} class="h-6 w-6" />
+  </div>
+  <h3 class="mt-5 text-xl font-bold">{title}</h3>
+  <p class="mt-3 text-sm leading-relaxed text-text-muted">{description}</p>
+</div>

@@ -1,0 +1,20 @@
+---
+interface Props {
+  heading?: string;
+  body?: string;
+  ctaLabel?: string;
+}
+const {
+  heading = "Ready to Elevate Your Brand?",
+  body = "Stop relying on outdated templates. Let's discuss a custom digital solution that scales with your ambition.",
+  ctaLabel = "Schedule a Call",
+} = Astro.props;
+---
+
+<section class="bg-mesh border-y border-border bg-surface">
+  <div class="container-page reveal py-20 text-center">
+    <h2 class="text-3xl font-bold md:text-4xl">{heading}</h2>
+    <p class="mx-auto mt-4 max-w-xl text-text-muted">{body}</p>
+    <a href="/#contact" class="btn btn-primary mt-8">{ctaLabel}</a>
+  </div>
+</section>

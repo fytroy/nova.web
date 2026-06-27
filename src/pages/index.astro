@@ -1,0 +1,147 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ContactForm from "../components/ContactForm.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import StatBar from "../components/StatBar.astro";
+import LogoMarquee from "../components/LogoMarquee.astro";
+import HeroVisual from "../components/HeroVisual.astro";
+import Icon from "../components/Icon.astro";
+import { projects } from "../data/projects";
+
+const proofPoints = [
+  {
+    icon: "code" as const,
+    title: "100% Open Source",
+    description: "Every project below links straight to its public GitHub repository. No vague case studies — clone it, read it, run it yourself.",
+  },
+  {
+    icon: "shield" as const,
+    title: "Real Payments, Real Stakes",
+    description: "KaribuStays processes genuine M-Pesa STK Push transactions in production, not a sandboxed checkout demo.",
+  },
+  {
+    icon: "chart" as const,
+    title: "Built on Lived Domain Experience",
+    description: "Our data and fintech work comes from working day-to-day as a banking data analyst — not from guessing what banks need.",
+  },
+];
+---
+
+<Layout
+  title="Building Tomorrow's Digital Excellence Today"
+  description="nova. is a digital studio crafting performance-driven, custom websites and applications — with a real, open-source portfolio to prove it."
+>
+  <section class="bg-mesh bg-grid relative overflow-hidden">
+    <div class="container-page grid items-center gap-16 py-24 md:grid-cols-2 md:py-32">
+      <div>
+        <p class="eyebrow reveal">Digital Excellence Studio</p>
+        <h1 class="reveal mt-5 text-5xl font-bold md:text-6xl">
+          Building Tomorrow's Digital Excellence Today.
+        </h1>
+        <p class="reveal mt-6 max-w-xl text-lg text-text-muted">
+          We craft performance-driven, custom websites and applications using a modern, dependable tech
+          stack — engineered for speed, built to scale, and shipped as real, open-source work.
+        </p>
+        <div class="reveal mt-8 flex flex-wrap gap-4">
+          <a href="#contact" class="btn btn-primary">Request a Free Audit</a>
+          <a href="/portfolio" class="btn">See Our Work</a>
+        </div>
+      </div>
+
+      <HeroVisual />
+    </div>
+  </section>
+
+  <StatBar />
+
+  <LogoMarquee />
+
+  <section class="container-page section">
+    <SectionHeading
+      eyebrow="What We Do"
+      title="Our Core Expertise"
+      subtitle="Three disciplines, one integrated team — from first sketch to production deploy."
+    />
+    <div class="mt-14 grid gap-6 md:grid-cols-3">
+      <ServiceCard
+        number="01"
+        icon="code"
+        title="Full-Stack Development"
+        description="React/Next.js, Node.js, and serverless architecture for scalable, lightning-fast applications."
+      />
+      <ServiceCard
+        number="02"
+        icon="chart"
+        title="Data & Business Intelligence"
+        description="Dashboards, ETL pipelines, and dimensional data models that turn raw data into decisions — Power BI, Python, and SQL at the core."
+      />
+      <ServiceCard
+        number="03"
+        icon="gauge"
+        title="Performance & SEO"
+        description="Core Web Vitals optimization, PWA implementation, and technical SEO for top search rankings."
+      />
+    </div>
+    <div class="reveal mt-10 text-center">
+      <a href="/services" class="btn">View All Services &rarr;</a>
+    </div>
+  </section>
+
+  <section class="container-page section pt-0">
+    <SectionHeading
+      eyebrow="Selected Work"
+      title="Featured Projects"
+      subtitle="Real, open-source projects — not fabricated case studies. Each one links to its GitHub repo."
+    />
+    <div class="mt-14 grid gap-8 md:grid-cols-2">
+      {projects.slice(0, 4).map((p) => (
+        <ProjectCard
+          slug={p.slug}
+          title={p.title}
+          tags={p.tags}
+          summary={p.summary}
+          variant={p.variant}
+          status={p.status}
+          screenshot={p.screenshot}
+        />
+      ))}
+    </div>
+    <div class="reveal mt-10 text-center">
+      <a href="/portfolio" class="btn btn-primary">Explore Full Portfolio</a>
+    </div>
+  </section>
+
+  <section class="bg-surface/40 py-24">
+    <div class="container-page">
+      <SectionHeading eyebrow="Why Trust Us" title="Proof, Not Promises" />
+      <div class="mt-14 grid gap-6 md:grid-cols-3">
+        {proofPoints.map((p) => (
+          <div class="card reveal p-8">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-dim text-accent">
+              <Icon name={p.icon} class="h-6 w-6" />
+            </div>
+            <h3 class="mt-5 font-bold text-text">{p.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-text-muted">{p.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="border-y border-border bg-surface">
+    <div class="container-page grid gap-12 py-20 md:grid-cols-2 md:items-center">
+      <div class="reveal">
+        <p class="eyebrow justify-start">Let's Talk</p>
+        <h2 class="mt-4 text-left text-3xl font-bold md:text-4xl">Ready to Elevate Your Brand?</h2>
+        <p class="mt-4 text-text-muted">
+          Stop relying on outdated templates. Let's discuss a custom digital solution that scales with your ambition.
+        </p>
+      </div>
+      <div class="reveal">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+</Layout>

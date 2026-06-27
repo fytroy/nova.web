@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CTABanner from "../components/CTABanner.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import Icon from "../components/Icon.astro";
+
+const services = [
+  {
+    number: "01",
+    icon: "code" as const,
+    title: "Custom Application Development",
+    description:
+      "Building tailored, high-performance web applications. We specialize in component-based architecture using React, Vue, and Astro for unparalleled speed and maintainability.",
+  },
+  {
+    number: "02",
+    icon: "chart" as const,
+    title: "Data & Business Intelligence",
+    description:
+      "Dashboards, ETL pipelines, and dimensional data models (star schemas, OLAP warehouses) that turn raw data into decisions — Power BI, Python, SQL, and DuckDB at the core.",
+  },
+  {
+    number: "03",
+    icon: "cloud" as const,
+    title: "Cloud & Serverless Architecture",
+    description:
+      "Leveraging AWS, Azure, and Google Cloud to deploy applications using serverless functions, minimizing costs and maximizing global scalability.",
+  },
+  {
+    number: "04",
+    icon: "sparkle" as const,
+    title: "UX/UI & Prototyping",
+    description:
+      "Focused design methodology involving user research, wireframing, and interactive prototyping. We create interfaces that are intuitive, accessible, and conversion-focused.",
+  },
+  {
+    number: "05",
+    icon: "shield" as const,
+    title: "Financial Systems & Payments Integration",
+    description:
+      "Mobile money checkout (M-Pesa Daraja), ledger-to-settlement reconciliation engines, and the unglamorous backend rigor financial data actually demands.",
+  },
+  {
+    number: "06",
+    icon: "gauge" as const,
+    title: "Core Web Vitals Optimization",
+    description:
+      "Dedicated performance audits and optimization to achieve perfect scores on Google's Core Web Vitals, ensuring superior user experience and improved search ranking.",
+  },
+];
+
+const differentiators = [
+  { icon: "code" as const, title: "Open by Default", description: "Our portfolio links to real GitHub repositories, not closed-off case study slides. You can read the code before you hire us." },
+  { icon: "rocket" as const, title: "Ship in Weeks, Not Quarters", description: "Two-week sprints with staging access from day one mean you see real progress, not just status decks." },
+  { icon: "chat" as const, title: "Direct Access, No Middlemen", description: "You work directly with the person building your product — no account managers relaying messages between you and the work." },
+  { icon: "search" as const, title: "Obsessive Performance Auditing", description: "Every release is benchmarked against Core Web Vitals before it ships, not after users complain." },
+];
+---
+
+<Layout
+  title="Services"
+  description="From serverless back-ends to engaging front-end components, nova. covers the full scope of modern digital production."
+  active="services"
+>
+  <section class="bg-mesh container-page flex flex-col items-center gap-6 py-24 text-center">
+    <p class="eyebrow reveal">What We Do</p>
+    <h1 class="reveal max-w-3xl text-4xl font-bold md:text-6xl">Our Digital Service Spectrum</h1>
+    <p class="reveal max-w-2xl text-text-muted">
+      From serverless back-ends to engaging front-end components, we cover the full scope of modern digital
+      production. Our focus is on speed, scalability, and user delight.
+    </p>
+  </section>
+
+  <section class="container-page section pt-0">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {services.map((s) => (
+        <div class="card reveal overflow-hidden p-8">
+          <span class="card-watermark">{s.number}</span>
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-dim text-accent">
+            <Icon name={s.icon} class="h-6 w-6" />
+          </div>
+          <h3 class="mt-5 text-lg font-bold">{s.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-text-muted">{s.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y border-border bg-surface/40 py-24">
+    <div class="container-page">
+      <SectionHeading eyebrow="Why nova." title="What Makes the Partnership Different" />
+      <div class="mt-14 grid gap-8 md:grid-cols-2">
+        {differentiators.map((d) => (
+          <div class="reveal flex gap-5">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-dim text-accent">
+              <Icon name={d.icon} class="h-6 w-6" />
+            </div>
+            <div>
+              <h3 class="font-bold text-text">{d.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-text-muted">{d.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner heading="Ready for a Performance Audit?" />
+</Layout>

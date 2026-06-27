@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CTABanner from "../components/CTABanner.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+
+const steps = [
+  {
+    number: "01",
+    title: "Discovery & Strategy",
+    description:
+      "We begin with a deep dive into your business goals, target audience, and competitive landscape. The output is a clear, validated digital strategy and detailed technical requirements.",
+    duration: "1–2 weeks",
+  },
+  {
+    number: "02",
+    title: "Design & Prototyping",
+    description:
+      "Our UX/UI team creates wireframes and interactive prototypes. This stage ensures the visual design and user flow are refined and approved before any code is written, saving time and cost.",
+    duration: "2–3 weeks",
+  },
+  {
+    number: "03",
+    title: "Agile Development Sprints",
+    description:
+      "The solution is built in two-week sprints. You receive regular updates and access to staging environments for continuous feedback, guaranteeing alignment with your vision.",
+    duration: "4–8 weeks",
+  },
+  {
+    number: "04",
+    title: "Quality Assurance & Launch",
+    description:
+      "Rigorous testing across devices, browsers, and performance metrics (Core Web Vitals). Upon final sign-off, we execute a seamless, zero-downtime deployment to your chosen cloud environment.",
+    duration: "1 week",
+  },
+  {
+    number: "05",
+    title: "Post-Launch & Optimization",
+    description:
+      "Our partnership doesn't end at launch. We provide ongoing support, monitor performance analytics, and offer optimization sprints to ensure the platform scales with your business needs.",
+    duration: "Ongoing",
+  },
+];
+---
+
+<Layout
+  title="Process"
+  description="nova. follows a five-stage, iterative methodology designed to deliver high-quality digital products on time with clear communication."
+  active="process"
+>
+  <section class="bg-mesh container-page flex flex-col items-center gap-6 py-24 text-center">
+    <p class="eyebrow reveal">How We Work</p>
+    <h1 class="reveal max-w-3xl text-4xl font-bold md:text-6xl">Our Agile & Transparent Process</h1>
+    <p class="reveal max-w-2xl text-text-muted">
+      We follow a five-stage, iterative methodology designed to deliver high-quality digital products on time,
+      while maintaining clear communication and flexibility at every step.
+    </p>
+  </section>
+
+  <section class="container-page section pt-0">
+    <div class="relative">
+      <div class="timeline-rail"></div>
+      <div class="flex flex-col gap-10">
+        {steps.map((step) => (
+          <div class="reveal relative flex gap-6 pl-12 md:gap-10 md:pl-20">
+            <div class="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-full border border-accent-dim bg-bg font-display text-lg font-bold text-accent md:h-16 md:w-16 md:text-2xl">
+              {step.number}
+            </div>
+            <div class="card flex-1 p-6 md:p-8">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="text-lg font-bold md:text-xl">{step.title}</h3>
+                <span class="eyebrow">{step.duration}</span>
+              </div>
+              <p class="mt-3 text-sm leading-relaxed text-text-muted md:text-base">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-border bg-surface/40 py-24">
+    <div class="container-page">
+      <SectionHeading
+        eyebrow="Why It Works"
+        title="Built-In Checkpoints, Not Surprises"
+        subtitle="Every stage ends with a concrete artifact you can react to — a strategy doc, a clickable prototype, a staging URL — so direction changes are cheap, not painful."
+      />
+    </div>
+  </section>
+
+  <CTABanner />
+</Layout>

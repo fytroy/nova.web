@@ -1,0 +1,63 @@
+---
+const socials = [
+  { href: "https://instagram.com/novadigital", label: "nova. on Instagram", icon: "/images/instagram.svg" },
+  { href: "https://x.com/novadigital", label: "nova. on X (Twitter)", icon: "/images/x.svg" },
+  { href: "https://facebook.com/novadigital", label: "nova. on Facebook", icon: "/images/facebook.svg" },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="relative border-t border-border bg-surface">
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent"></div>
+  <div class="container-page grid gap-12 py-16 md:grid-cols-[2fr_1fr_1fr_1fr]">
+    <div>
+      <a href="/" class="flex items-center gap-2 font-display text-lg font-bold text-accent">
+        <img src="/images/logo.svg" alt="nova. logo" width="24" height="24" />
+        nova.
+      </a>
+      <p class="mt-4 max-w-sm text-sm text-text-muted">
+        Crafting scalable, performance-driven digital solutions with a modern, dependable tech stack.
+      </p>
+      <div class="mt-5 flex gap-4">
+        {socials.map((s) => (
+          <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} class="opacity-70 transition-opacity hover:opacity-100">
+            <img src={s.icon} alt="" width="20" height="20" />
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <h4 class="mb-4 text-sm font-bold uppercase tracking-wide text-accent">Quick Links</h4>
+      <ul class="space-y-2 text-sm text-text-muted">
+        <li><a href="/services" class="hover:text-text">Our Services</a></li>
+        <li><a href="/portfolio" class="hover:text-text">Case Studies</a></li>
+        <li><a href="/process" class="hover:text-text">Our Process</a></li>
+        <li><a href="/careers" class="hover:text-text">Careers</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="mb-4 text-sm font-bold uppercase tracking-wide text-accent">Resources</h4>
+      <ul class="space-y-2 text-sm text-text-muted">
+        <li><a href="/blog" class="hover:text-text">Blog</a></li>
+        <li><a href="/faq" class="hover:text-text">FAQ</a></li>
+        <li><a href="/privacy" class="hover:text-text">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-text">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="mb-4 text-sm font-bold uppercase tracking-wide text-accent">Have a Project?</h4>
+      <p class="mb-4 text-sm text-text-muted">
+        Let's discuss how we can accelerate your digital vision.
+      </p>
+      <a href="/#contact" class="btn">Start a Brief</a>
+    </div>
+  </div>
+
+  <div class="border-t border-border py-6 text-center text-xs text-text-muted">
+    &copy; {year} nova. All rights reserved. &middot; Crafted with clean code and performance in mind.
+  </div>
+</footer>

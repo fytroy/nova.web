@@ -1,161 +1,66 @@
- nova. - Digital Excellence Web Agency
+# nova. — Digital Excellence Web Agency
 
-A modern, performance-driven website for a digital agency specializing in custom web development and cutting-edge tech solutions.
+A modern, performance-driven website for a digital agency specializing in custom web development and cutting-edge tech solutions. Rebuilt on **Astro + Tailwind CSS v4** for near-zero JS, fast builds, and first-class Netlify deployment.
 
- ![Home](1.png)
+## Stack
 
- 🎯 About
+- [Astro](https://astro.build/) — static-first framework, component islands
+- [Tailwind CSS v4](https://tailwindcss.com/) — via `@tailwindcss/vite`, theme tokens defined in `src/styles/global.css`
+- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) — automatic sitemap generation
+- Netlify Forms — real, working contact form (no client-side JS interception)
 
-nova. is a professional web presence showcasing digital expertise, services, and portfolio projects. Built with clean, modern design principles and optimized for performance.
-
- 📁 Project Structure
+## Project structure
 
 ```
 nova.web/
-├── index.html               Homepage
-├── services.html            Services overview
-├── portfolio.html           Portfolio/case studies
-├── process.html             Development process
-├── blog.html                Blog page
-├── careers.html             Careers page
-├── faq.html                 FAQ page
-├── privacy.html             Privacy policy
-├── terms.html               Terms of service
-│
-├── ascend-wealth.html       Case study: Ascend Wealth
-├── vortex-retail.html       Case study: Vortex Retail
-├── quantify-data.html       Case study: Quantify Data
-│
-├── netlify.toml             Netlify deployment configuration
-├── css/
-│   └── style.css            Main stylesheet
-├── js/
-│   └── main.js              Main JavaScript
-└── assets/
-    └── img/
-        ├── logo.svg         nova. logo
-        ├── hero-visual.png  Hero section image
-        ├── facebook.svg     Social icon
-        ├── instagram.svg    Social icon
-        └── x.svg            Social icon
+├── astro.config.mjs
+├── package.json
+├── netlify.toml
+├── public/
+│   ├── favicon.ico
+│   ├── robots.txt
+│   └── images/              logo, social icons, hero art
+└── src/
+    ├── layouts/Layout.astro     shared <head>, header/footer, SEO/OG tags
+    ├── components/              Header, Footer, ServiceCard, ProjectCard, ContactForm, etc.
+    ├── data/projects.ts         single source of truth for portfolio + case-study content
+    ├── styles/global.css        Tailwind v4 theme tokens + custom utility classes
+    └── pages/
+        ├── index.astro          Homepage
+        ├── services.astro
+        ├── portfolio.astro
+        ├── process.astro
+        ├── blog.astro
+        ├── careers.astro
+        ├── faq.astro
+        ├── privacy.astro
+        ├── terms.astro
+        ├── thank-you.astro      Netlify Forms success page
+        └── work/[slug].astro    Dynamic case-study route (vortex-retail, quantify-data, ascend-wealth)
 ```
 
- 🎨 Features
+## Getting started
 
-- Responsive Design - Mobile-first approach, works on all devices
-- Modern Technology - Built with HTML5, CSS3, and JavaScript (vanilla)
-- SEO Optimized - Semantic HTML and proper meta tags
-- Accessibility - ARIA labels and semantic structure
-- Smooth Animations - AOS (Animate On Scroll) library integration
-- Professional Typography - Google Fonts (Roboto & Playfair Display)
-- Contact Forms - Netlify Forms integration for submissions
+```bash
+npm install
+npm run dev       # http://localhost:4321
+npm run build     # outputs static site to dist/
+npm run preview   # preview the production build locally
+```
 
- 🚀 Getting Started
+## Deployment
 
- Prerequisites
-- A modern web browser
-- A code editor (VS Code, etc.)
-- Basic knowledge of HTML/CSS/JavaScript
+Configured for Netlify via `netlify.toml`:
 
- Installation
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Contact form on the homepage (`/#contact`) is a real Netlify Forms submission — `data-netlify="true"`, a hidden `form-name` field, and a honeypot field. Successful submissions redirect to `/thank-you`.
 
-1. Clone or download the repository
-2. Open the project folder in your code editor
-3. Use a local server to serve the files (recommended):
-   ```bash
-    Using Python
-   python -m http.server 8000
-   
-    Using Node.js (with http-server)
-   npx http-server
-   ```
-4. Navigate to `http://localhost:8000` in your browser
+## Notes on this rebuild
 
- 🌐 Deployment
+The previous static HTML/CSS/JS version of this site had several real bugs that are fixed here:
 
-This project is configured for Netlify deployment:
-
-- Configuration file: `netlify.toml`
-- Base directory: `/` (root)
-- Publish directory: `/` (entire project)
-- Build command: None (static site)
-- Forms are handled via Netlify Forms
-
-To deploy:
-1. Push your repository to GitHub
-2. Connect to Netlify
-3. Configure build settings (already set in `netlify.toml`)
-4. Deploy!
-
- 📄 Pages
-
-| Page | Purpose |
-|------|---------|
-| `index.html` | Main landing page with hero section and services overview |
-| `services.html` | Detailed service offerings |
-| `portfolio.html` | Portfolio grid with case studies |
-| `process.html` | Development process and methodology |
-| `blog.html` | Blog articles and insights |
-| `careers.html` | Job openings and career information |
-| `faq.html` | Frequently asked questions |
-| `privacy.html` | Privacy policy |
-| `terms.html` | Terms of service |
-| `ascend-wealth.html` | Case study: Ascend Wealth project |
-| `vortex-retail.html` | Case study: Vortex Retail project |
-| `quantify-data.html` | Case study: Quantify Data project |
-
- 🛠️ Technologies Used
-
-- HTML5 - Semantic markup
-- CSS3 - Modern styling and animations
-- JavaScript - Interactive features
-- Google Fonts - Professional typography (Roboto, Playfair Display)
-- AOS Library - Scroll animations
-- Netlify - Hosting and forms
-
- 📞 Contact & Navigation
-
-- Main Navigation - Services, Portfolio, Process
-- CTA Button - "Start a Project" and "Request a Free Audit"
-- Contact Form - Handled via Netlify Forms
-- Social Links - Facebook, Instagram, X (Twitter)
-
- 🎯 Key Sections
-
- Hero Section
-Eye-catching headline with call-to-action
-
- Services Section
-Core expertise highlights with service cards
-
- Portfolio Section
-Showcase of completed projects and case studies
-
- Process Section
-Methodology and approach explanation
-
- 📝 Notes
-
-- Favicon is expected at `favicon.ico` (root directory)
-- All images are in `assets/img/`
-- Main styling is centralized in `css/style.css`
-- JavaScript functionality in `js/main.js`
-- Mobile menu toggle functionality for responsive navigation
-
- 🔗 External Dependencies
-
-- [Google Fonts](https://fonts.google.com/)
-- [AOS - Animate On Scroll](https://michalsnik.github.io/aos/)
-- [Netlify Forms](https://www.netlify.com/products/forms/)
-
- 📄 License
-
-This project's license information would typically be specified here.
-
- ✍️ Author
-
-Digital agency web presence
-
----
-
-Last Updated: December 2025
+- The mobile hamburger menu didn't work (JS/CSS class name mismatch) — now a single `Header.astro` component drives consistent behavior on every page.
+- The contact form never actually sent data anywhere (it faked success with a `setTimeout` + `alert()`) — it now submits a real Netlify Forms POST.
+- Several pages referenced project screenshots that didn't exist, producing broken images — replaced with designed placeholder artwork (`ProjectArt.astro`).
+- Branding and footer social icons were inconsistent across pages — now centralized in shared components.

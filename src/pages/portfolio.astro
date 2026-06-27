@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ProjectArt from "../components/ProjectArt.astro";
+import CTABanner from "../components/CTABanner.astro";
+import { projects } from "../data/projects";
+
+const [featured, ...rest] = projects;
+---
+
+<Layout
+  title="Portfolio"
+  description="Real, open-source projects from nova. — a Kenyan stays marketplace with live M-Pesa payments, e-commerce, banking automation, and BI data warehousing."
+  active="portfolio"
+>
+  <section class="bg-mesh container-page flex flex-col items-center gap-6 py-24 text-center">
+    <p class="eyebrow reveal">Selected Work</p>
+    <h1 class="reveal max-w-3xl text-4xl font-bold md:text-6xl">Our Proof of Concept</h1>
+    <p class="reveal max-w-2xl text-text-muted">
+      No fictional case studies — every project below is real, open-source, and linked straight to its GitHub
+      repository. Clone it, read it, or try the live demo yourself.
+    </p>
+  </section>
+
+  <section class="container-page section pt-0">
+    <a href={`/work/${featured.slug}`} class="card reveal grid overflow-hidden md:grid-cols-2">
+      <div class="aspect-video md:aspect-auto">
+        {featured.screenshot ? (
+          <img src={featured.screenshot} alt={`${featured.title} screenshot`} class="h-full w-full object-cover object-top" />
+        ) : (
+          <ProjectArt id={`featured-${featured.slug}`} variant={featured.variant} />
+        )}
+      </div>
+      <div class="flex flex-col justify-center p-8 md:p-12">
+        <span class="eyebrow justify-start">{featured.category}</span>
+        <h2 class="mt-4 text-2xl font-bold md:text-3xl">{featured.title}</h2>
+        <p class="mt-1 text-sm font-medium text-text-muted">{featured.tagline}</p>
+        <p class="mt-2 text-xs uppercase tracking-wide text-text-muted">{featured.tags}</p>
+        <p class="mt-4 text-text-muted">{featured.summary}</p>
+        <span class="mt-6 inline-flex items-center gap-1 font-bold text-accent">See Details &rarr;</span>
+      </div>
+    </a>
+
+    <div class="mt-8 grid gap-8 md:grid-cols-2">
+      {rest.map((p) => (
+        <ProjectCard
+          slug={p.slug}
+          title={p.title}
+          tags={p.tags}
+          summary={p.summary}
+          variant={p.variant}
+          status={p.status}
+          screenshot={p.screenshot}
+        />
+      ))}
+    </div>
+
+    <div class="reveal mt-10 text-center">
+      <a href="https://github.com/fytroy" target="_blank" rel="noopener noreferrer" class="btn">
+        Browse the Full GitHub &rarr;
+      </a>
+    </div>
+  </section>
+
+  <CTABanner />
+</Layout>
